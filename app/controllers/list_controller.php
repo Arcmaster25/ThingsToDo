@@ -1,7 +1,7 @@
 <?php
         class List_controller{
                 public function add(){
-                        require('../models/list_model.php');
+                        require('app/models/list_model.php');
                         session_start();
                         $message = '';
                         $user_id = '';
@@ -14,10 +14,10 @@
                                         $message = 'Lista creada de forma satisfactoria';
                                 }
                         }
-                        require('../views/list.php');
+                        require('app/views/list.php');
                 } 
                 public function index(){
-                        require('../models/list_model.php');
+                        require('app/models/list_model.php');
                         session_start();
                         $message = '';
                         $all_list = '';
@@ -31,10 +31,10 @@
                                         $all_list = $get_all;
                                 }
                         }
-                        require('../views/list.php');
+                        require('app/views/list.php');
                 }
                 public function update(){
-                        require('../models/list_model.php');
+                        require('app/models/list_model.php');
                         session_start();
                         $message = '';
                         $user_id = '';
@@ -47,14 +47,14 @@
                                         $message = 'Lista actualizada de forma satisfactoria';
                                 }
                         }
-                        require('../views/list.php');
+                        require('app/views/list.php');
                 }
                 public function delete(){
-                        require('../models/list_model.php');
+                        require('app/models/list_model.php');
                         session_start();
                         $message = '';
                         $user_id = '';
-                        if(isset($_POST['list_id'])){
+                        if(isset($_GET['list_id'])){
                                 $user_id = $_SESSION['user_id'];
                                 $new_name = $_POST['list_id'];
                                 $list_id = new List_model();
@@ -63,10 +63,10 @@
                                         $message = 'Lista eliminada de forma satisfactoria';
                                 }
                         }
-                        require('../views/list.php');
+                        require('app/views/list.php');
                 }
                 public function content(){
-                        require('../models/list_model.php');
+                        require('app/models/list_model.php');
                         session_start();
                         $user_id = '';
                         $all_task = '';
@@ -79,7 +79,7 @@
                                         $all_task = $content_list;
                                 }
                         }
-                        require('../views/list.php');
+                        require('app/views/list.php');
                 }
         }
 ?>

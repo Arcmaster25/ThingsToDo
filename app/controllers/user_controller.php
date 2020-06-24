@@ -1,7 +1,7 @@
 <?php
         class User_controller{
                 public function registry(){
-                        require('../models/user_model.php');
+                        require('app/models/user_model.php');
                         $message = '';
                         if(isset($_POST['usr']) && isset($_POST['pss'])){
                                 $user = $_POST['usr'];
@@ -20,10 +20,10 @@
                                         $message = 'Este usuario ya esta registrado en el sitio';
                                 }
                         }
-                        require('../views/registry.php');
+                        require('app/views/registry.php');
                 }
                 public function login(){
-                        require('../models/user_model.php');
+                        require('app/models/user_model.php');
                         session_start();
                         $message = '';
                         if(isset($_POST['usr']) && isset($_POST['pss'])){
@@ -37,29 +37,27 @@
                                         if($get_user['name'] == $user && password_verify($password, $get_user['password'])){
                                                 $_SESSION['user_name'] = $get_user['name'];
                                                 $_SESSION['user_id'] = $get_user['id'];
-                                                $message = 'Acceso permitido';
+                                                header('Location: index.php');
                                         }else{
                                                 $message = 'Verifique que la contrasena o nombre de usuario sean correctos';
                                         }
                                 }
                         }
-                        require('../views/login.php');
+                        require('app/views/login.php');
                 }
-                public function index(){
-                        require('../models/user_model.php');
+                public function profile(){
+                        require('app/models/user_model.php');
                         session_start();
                         $user_name = '';
-                        $message = '';
                         $user_id = '';
                         if(isset($_SESSION['user_name']) &&  isset($_SESSION['user_id'])){
                                 $user_name = $_SESSION['user_name'];
                                 $user_id = $_SESSION['user_id'];
-                                $message = 'Usuario activo';
                         }
-                        require('../views/profile.php');
+                        require('app/views/profile.php');
                 }
                 public function update_name(){
-                        require('../models/user_model.php');
+                        require('app/models/user_model.php');
                         session_start();
                         $message = '';
                         $user_id = '';
@@ -72,10 +70,10 @@
                                         $message = 'Usuario actualizado de forma satisfactoria';
                                 }
                         }
-                        require('../views/profile.php');
+                        require('app/views/profile.php');
                 }
                 public function update_password(){
-                        require('../models/user_model.php');
+                        require('app/models/user_model.php');
                         session_start();
                         $message = '';
                         $user_id = '';
@@ -101,13 +99,13 @@
                                         }
                                 }
                         }
-                        require('../views/profile.php');
+                        require('app/views/profile.php');
                 }
                 public function log_out(){
                         session_start();
                         session_unset();
                         session_destroy();
-                        header('Location: ');
+                        header('Location: index.php');
                 }
         }
 ?>

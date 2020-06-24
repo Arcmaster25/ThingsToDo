@@ -1,5 +1,5 @@
 <?php
-        require('../config/db.php');
+        require('app/config/db.php');
         class List_model{
                 private $connection;
                 function __construct(){

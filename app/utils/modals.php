@@ -13,7 +13,7 @@
                                         </button>
                                 </div>
                                 <div class='modal-body'>
-                                        <form class='text-center' action='' method='POST'>
+                                        <form class='text-center' action='index.php?controller=list&action=add' method='POST'>
                                                 <div class='form-group'>
                                                         <label for='ls_name'>List Name</label>
                                                         <input type='text' class='form-control' name='ls_name'>
@@ -34,12 +34,54 @@
                                         </button>
                                 </div>
                                 <div class='modal-body'>
-                                        <form class='text-center' action='' method='POST'>
+                                        <form class='text-center' action='index.php?controller=homework&action=add' method='POST'>
                                                 <div class='form-group'>
                                                         <label for='ts_name'>Task Name</label>
                                                         <input type='text' class='form-control' name='ts_name'>
                                                 </div>
                                                 <button type='submit' class='btn btn-success'>Create</button>
+                                        </form>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div class='modal fade' id='update_list' tabindex='-1'>
+                <div class='modal-dialog modal-dialog-centered'>
+                        <div class='modal-content'>
+                                <div class='modal-header text-center'>
+                                        <h4 class='modal-title'>Update List</h4>
+                                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                <span aria-hidden='true'>&times;</span>
+                                        </button>
+                                </div>
+                                <div class='modal-body'>
+                                        <form class='text-center' action='index.php?controller=list&action=update' method='POST'>
+                                                <div class='form-group'>
+                                                        <label for='up_list'>List Name</label>
+                                                        <input type='text' class='form-control' name='up_list'>
+                                                </div>
+                                                <button type='submit' class='btn btn-success'>Update</button>
+                                        </form>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div class='modal fade' id='update_task' tabindex='-1'>
+                <div class='modal-dialog modal-dialog-centered'>
+                        <div class='modal-content'>
+                                <div class='modal-header text-center'>
+                                        <h4 class='modal-title'>Update task</h4>
+                                        <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                <span aria-hidden='true'>&times;</span>
+                                        </button>
+                                </div>
+                                <div class='modal-body'>
+                                        <form class='text-center' action='index.php?controller=list&action=update' method='POST'>
+                                                <div class='form-group'>
+                                                        <label for='up_list'>List Name</label>
+                                                        <input type='text' class='form-control' name='up_list'>
+                                                </div>
+                                                <button type='submit' class='btn btn-success'>Update</button>
                                         </form>
                                 </div>
                         </div>

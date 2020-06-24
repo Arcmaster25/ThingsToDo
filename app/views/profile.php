@@ -2,21 +2,35 @@
 <html>
 <head LANG='en'>
         <meta charset='UFT-8'>
-        <link rel='stylesheet' href='../../public/css/main.css'>
+        <link rel='stylesheet' href='public/css/main.css'>
         <title>ThingToDo</title>
 </head>
 <body> 
-        <?php require_once('../utils/header.php'); ?>
+        <?php require_once('app/utils/header.php'); ?>
         <div class='container'>
                 <div class='row'>
                         <div class='col-12'>
+                                <?php if($user_id == ''){?>
+                                        <div class='alert alert-danger text-center' role='alert'>
+                                                Debes iniciar sesion para ver tus datos
+                                        </div>
+                                <?php } ?>
+                                <?php if($message != 'Usuario actualizado de forma satisfactoria' || $message != 'Contrasena actualizada de forma satisfactoria'){ ?>
+                                        <div class='alert alert-danger text-center' role='alert'>
+                                                <?php echo $message ?>
+                                        </div>
+                                <?php }else{ ?>
+                                        <div class='alert alert-success text-center' role='alert'>
+                                                <?php echo $message ?>
+                                        </div>
+                                <?php } ?>
                                 <h1 class='text-center mt-3'>Profile</h1>
                                 <main class='card text-center'> 
                                         <div class='card-body mt-3'>
                                                 <form method='POST'>
                                                         <div class='form-group'>
                                                                 <label for='user'>User</label>
-                                                                <input type='text' disabled class='form-control' name='user'>
+                                                                <input type='text' disabled class='form-control' name='user' value="<?php echo $name = $user_name != '' ? $user_name : '' ?>">
                                                         </div>
                                                         <div id='user_form'>
                                                                 <div class='form-group'>
@@ -24,11 +38,11 @@
                                                                         <input type='text' class='form-control' name='usr'>
                                                                 </div>
                                                                 <div class='form-group'>
-                                                                        <button type='submit' class='btn btn-success' formaction=''>Confirm Change</button>
+                                                                        <button type='submit' class='btn btn-success' formaction='index.php?controller=user&action=update_name'>Confirm Change</button>
                                                                 </div>
                                                         </div>
                                                         <div class='form-group'>
-                                                                <label for='pss'>Password</label>
+                                                                <label for='pss'><span id='update'>Actual</span> Password</label>
                                                                 <input type='password' disabled class='form-control' name='pss'>
                                                         </div>
                                                         <div id='password_form'>
@@ -41,7 +55,7 @@
                                                                         <input type='password' class='form-control' name='pss_conf'>
                                                                 </div>
                                                                 <div class='form-group'>
-                                                                        <button type='submit' class='btn btn-success' formaction=''>Confirm Change</button>
+                                                                        <button type='submit' class='btn btn-success' formaction='index.php?controller=user&action=update_password'>Confirm Change</button>
                                                                 </div>
                                                         </div>
                                                 </form>
@@ -54,8 +68,8 @@
                         </div>
                 </div>
         </div>
-        <?php require_once('../utils/footer.php'); ?>
-        <script src='../../tools/jquery/jquery.min.js'></script>
-        <script src='../js/functions/activate_update_name.js'></script>
+        <?php require_once('app/utils/footer.php'); ?>
+        <script src='tools/jquery/jquery.min.js'></script>
+        <script src='app/js/functions/activate_update_name.js'></script>
 </body>
 </html>

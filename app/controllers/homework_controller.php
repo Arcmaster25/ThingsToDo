@@ -1,7 +1,7 @@
 <?php
 class Homework_controller{
         public function add(){
-                require('../models/homework_model.php');
+                require('app/models/homework_model.php');
                 session_start();
                 $message = '';
                 $user_id = '';
@@ -15,10 +15,10 @@ class Homework_controller{
                                 $message = 'Tarea creada de forma satisfactoria';
                         }
                 }
-                require('../views/list.php');
+                require('app/views/list.php');
         }
         public function update(){
-                require('../models/homework_model.php');
+                require('app/models/homework_model.php');
                 session_start();
                 $message = '';
                 $user_id = '';
@@ -32,14 +32,14 @@ class Homework_controller{
                                 $message = 'tarea actualizada de forma correcta';
                         }
                 }
-                require('../views/list.php');
+                require('app/views/list.php');
         }
         public function delete(){
-                require('../models/homework_model.php');
+                require('app/models/homework_model.php');
                 session_start();
                 $message = '';
                 $user_id = '';
-                if(isset(isset($_POST['homework_id'])){
+                if(isset($_POST['homework_id'])){
                         $homework_id = $_POST['homework_id'];
                         $user_id = $_SESSION['user_id'];
                         $homework_model = new Homework_model();
@@ -48,7 +48,7 @@ class Homework_controller{
                                 $message = 'Tarea eliminada de forma satisfactoria';
                         }
                 }
-                require('../views/list.php');
+                require('app/views/list.php');
         }
 }
 ?>

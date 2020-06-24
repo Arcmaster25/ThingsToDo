@@ -1,5 +1,6 @@
 $('#user_form').hide();
 $('#password_form').hide();
+$('#update').hide();
 $('#ch_user').click(function(){
         $('#user_form').slideToggle();
 });
@@ -10,4 +11,5 @@ $('#ch_password').click(function(){
                 $('input[name="pss"]').attr('disabled', 'yes');
         }
         $('#password_form').slideToggle();
+        $('#update').fadeToggle();
 });
