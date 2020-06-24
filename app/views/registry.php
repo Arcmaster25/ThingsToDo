@@ -6,26 +6,28 @@
         <title>ThingToDo</title>
 </head>
 <body> 
-        <div>
-                <div>
-                        <h2>Registry</h2>
-                </div> 
-                <div>
-                        <form>
-                                <div>
-                                        <label for=''>User</label>
-                                        <input type='text'>
-                                </div>
-                                <div>
-                                        <label for=''>Password</label>
-                                        <input type='text'>
-                                </div>
-                                <div>
-                                        <button type='success'>Registry</button>
-                                        <hr>
-                                        <p>Terminos y condiciones para el uso de la plataforma</p>
-                                </div>
-                        </form>
+        <div class='container my-5'>
+                <div class='card text-center'>
+                        <div class='card-header'>
+                                <h2 class='card-title'>Registry</h2>
+                        </div> 
+                        <div class='card-body'>
+                                <form>
+                                        <div class='form-group'>
+                                                <label for=''>User</label>
+                                                <input type='text' class='form-control'>
+                                        </div>
+                                        <div class='form-group'>
+                                                <label for=''>Password</label>
+                                                <input type='text' class='form-control'>
+                                        </div>
+                                        <div class='form-group'>
+                                                <button type='success' class='btn btn-primary'>Registry</button>
+                                                <hr>
+                                                <p>Terminos y condiciones para el uso de la plataforma</p>
+                                        </div>
+                                </form>
+                        </div>
                 </div>
         </div>
 </body>
