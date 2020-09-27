@@ -12,7 +12,7 @@
                                 <h2 class='card-title'>Login</h2>
                         </div> 
                         <div class='card-body'>
-                                <form>
+                                <form action='' method='POST'>
                                         <div class='form-group'>
                                                 <label for='user'>User</label>
                                                 <input type='text' class='form-control' name='user'>
