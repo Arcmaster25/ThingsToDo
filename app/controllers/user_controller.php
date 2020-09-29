@@ -49,8 +49,12 @@
                         require('../models/user_model.php');
                         session_start();
                         $user_name = '';
-                        if(isset($_SESSION['user_name']) && $_SESSION['user_name'] != ''){
+                        $message = '';
+                        $user_id = '';
+                        if(isset($_SESSION['user_name']) &&  isset($_SESSION['user_id'])){
                                 $user_name = $_SESSION['user_name'];
+                                $user_id = $_SESSION['user_id'];
+                                $message = 'Usuario activo';
                         }
                         require('../views/profile.php');
                 }
@@ -58,6 +62,7 @@
                         require('../models/user_model.php');
                         session_start();
                         $message = '';
+                        $user_id = '';
                         if(isset($_POST['usr'])){
                                 $new_user = $_POST['usr'];
                                 $user_id = $_SESSION['user_id'];
@@ -73,6 +78,7 @@
                         require('../models/user_model.php');
                         session_start();
                         $message = '';
+                        $user_id = '';
                         if(isset($_POST['pss']) && isset($_POST['pss_new']) && isset($_POST['pss_conf'])){
                                 $actual_pass = $_POST['pss'];
                                 $new_pass = $_POST['pss_new'];
