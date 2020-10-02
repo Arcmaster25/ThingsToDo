@@ -51,4 +51,9 @@ class Homework_controller{
                 require('app/views/list.php');
         }
 }
+if(isset($_GET['action']) && !empty($_GET['action'])){
+        $action = $_GET['action'];
+        $list_class = new Howemork_controller();
+        $list_class->$action();
+}
 ?>

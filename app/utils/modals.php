@@ -18,7 +18,11 @@
                                                         <label for='ls_name'>List Name</label>
                                                         <input type='text' class='form-control' name='ls_name'>
                                                 </div>
-                                                <button type='submit' class='btn btn-success'>Create</button>
+                                                <?php if($user_id == ''){ ?>
+                                                        <button type='submit' disabled class='btn btn-success'>Create</button>
+                                                <?php }else{ ?>
+                                                        <button type='submit' class='btn btn-success'>Create</button>
+                                                <?php } ?>
                                         </form>
                                 </div>
                         </div>
@@ -60,6 +64,7 @@
                                                         <label for='up_list'>List Name</label>
                                                         <input type='text' class='form-control' name='up_list'>
                                                 </div>
+                                                <input type='hidden' name='list_id' id='list_id' value=''>
                                                 <button type='submit' class='btn btn-success'>Update</button>
                                         </form>
                                 </div>

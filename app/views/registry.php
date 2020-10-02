@@ -7,14 +7,16 @@
 </head>
 <body> 
         <?php if($message != 'El usuario fue creado de forma satisfactoria'){ ?>
-                <div class='alert alert-danger text-center'>
-                        <?php $message ?>
-                </div>
+                <?php if($message == ''){}else{ ?>
+                        <div class='alert alert-danger text-center'>
+                                <?php $message ?>
+                        </div>
+                <?php } ?>
         <?php }else{ ?>
                 <div class='alert alert-success text-center'>
                         <?php $message ?>
                 </div>
-                <?php header('Location: index.php?controller=user?action=login'); ?>
+                <?php header('Location: index.php?controller=user&action=login'); ?>
         <?php } ?>
         <div class='container my-5'>
                 <div class='card text-center'>
@@ -25,11 +27,11 @@
                                 <form action='index.php?controller=user&action=registry' method='POST'>
                                         <div class='form-group'>
                                                 <label for='usr'>User</label>
-                                                <input type='text' class='form-control' name='usr'>
+                                                <input type='text' class='form-control text-center' name='usr'>
                                         </div>
                                         <div class='form-group'>
                                                 <label for='pss'>Password</label>
-                                                <input type='text' class='form-control' name='pss'>
+                                                <input type='password' class='form-control text-center' name='pss'>
                                         </div>
                                         <div class='form-group'>
                                                 <button type='success' class='btn btn-primary'>Registry</button>

@@ -17,17 +17,36 @@
                                                 <span class='text-uppercase font-weight-bold'>+</span>
                                         </button>
                                 </h2>
+                                <?php if($message == ''){}else{ ?>
+                                        <?php if($message != 'Lista creada de forma satisfactoria'){ ?>
+                                                <div class='alert alert-danger text-center m-2'>
+                                                        Hubo un error al crear su lista
+                                                </div>
+                                        <?php }else if($message != 'Lista actualizada de forma satisfactoria'){ ?>
+                                                <div class='alert alert-danger text-center m-2'>
+                                                        Hubo un error al actualizar su lista
+                                                </div>
+                                        <?php }else if($message != 'Lista eliminada de forma satisfactoria'){ ?>
+                                                <div class='alert alert-danger text-center m-2'>
+                                                        Hubo un error al borrar su lista
+                                                </div>
+                                        <?php } ?>
+                                <?php } ?>
                                 <ul class='list-group mt-4 mr-4'>
-                                        <?php if($all_list == null || $all_list == '' || $all_list == 0){ ?>
-                                                <p class='text-monospace'>No has creado ninguna lista</p>
+                                        <?php if($user_id == ''){ ?>
+                                                <p class='text-monospace'>Debes loguearte para ver tus listas<p>
                                         <?php }else{ ?>
-                                                <?php foreach($all_list as $list_item){ ?>
-                                                        <li class='list_group_item'>
-                                                                <span class='text-monospace'><?php echo $list_item['list_name'] ?></span>
-                                                                <a href='index.php?controller=list&action=content' class='btn btn-outline-success'>show</a>
-                                                                <button type='button' class='btn btn-outline-warning' data-toggle='modal' data-target='#update_list'>update</button>
-                                                                <a href="index.php?controller=list&action=delete&list_id=<?php echo $list_item['id'] ?>" class='btn btn-outline-delete'>delete</a>
-                                                        </li>
+                                                <?php if($all_list == null || $all_list == '' || $all_list == 0){ ?>
+                                                        <p class='text-monospace'>No has creado ninguna lista</p>
+                                                <?php }else{ ?>
+                                                        <?php foreach($all_list as $list_item){ ?>
+                                                                <li class="list-group-item">
+                                                                        <span class='text-monospace'><?php echo $list_item['list_name'] ?></span>
+                                                                        <a href='index.php?controller=list&action=content' class='btn btn-outline-success btn-sm'>show</a>
+                                                                        <button type='button' class='btn btn-outline-warning btn-sm' data-toggle='modal' data-target='#update_list' value='<?php echo $list_item['id'] ?>'>update</button>
+                                                                        <a href="index.php?controller=list&action=delete&list_id=<?php echo $list_item['id'] ?>" class='btn btn-outline-danger btn-sm'>delete</a>
+                                                                </li>
+                                                        <?php } ?>
                                                 <?php } ?>
                                         <?php } ?>
                                 </ul>
@@ -42,16 +61,17 @@
                                 <ul class='list-group'>
                                         <?php if($user_id == ''){ ?>
                                                 <p class='text-monospace'>Debes loguearte para ver tus tareas</p>
-                                        <?php } ?>
-                                        <?php if($all_task == null || $all_task == '' || $all_task == 0){ ?>
-                                                <p class='text-monospace'>No has creado ninguna tarea</p>
                                         <?php }else{ ?>
-                                                <?php foreach($all_task as $task){ ?>
-                                                        <li class='list_group_item'>
-                                                                <span class='text-monospace'><?php echo $task['homework_name'] ?></span>
-                                                                <button type='button' class='btn btn-outline-warning' data-toggle='modal' data-target='#update_task'>update</button>
-                                                                <button type='button' class='btn btn-outline-delete'>delete</button>
-                                                        </li>
+                                                <?php if($all_task == ''){ ?>
+                                                        <p class='text-monospace'>No has creado ninguna tarea</p>
+                                                <?php }else{ ?>
+                                                        <?php foreach($all_task as $task){ ?>
+                                                                <li class='list_group_item'>
+                                                                        <span class='text-monospace'><?php echo $task['homework_name'] ?></span>
+                                                                        <button type='button' class='btn btn-outline-warning' data-toggle='modal' data-target='#update_task'>update</button>
+                                                                        <button type='button' class='btn btn-outline-delete'>delete</button>
+                                                                </li>
+                                                        <?php } ?>
                                                 <?php } ?>
                                         <?php } ?>
                                 </ul>
@@ -62,5 +82,6 @@
         <script src='tools/jquery/jquery.min.js'></script>
         <script src='tools/popper/popper.min.js'></script>
         <script src='tools/bootstrap/dist/js/bootstrap.min.js'></script>
+        <script src='app/js/functions/get_id_list.js'></script>
 </body>
 </html>

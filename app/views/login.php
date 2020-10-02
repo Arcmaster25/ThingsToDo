@@ -7,7 +7,7 @@
 </head>
 <body> 
         <?php if($message != ''){ ?>
-                <div class='alert alert-danger'>
+                <div class='alert alert-danger text-center m-2'>
                         <?php echo $message; ?>
                 </div>
         <?php } ?>
@@ -20,11 +20,11 @@
                                 <form action='index.php?controller=user&action=login' method='POST'>
                                         <div class='form-group'>
                                                 <label for='usr'>User</label>
-                                                <input type='text' class='form-control' name='usr'>
+                                                <input type='text' class='form-control text-center' name='usr'>
                                         </div>
                                         <div class='form-group'>
                                                 <label for='pss'>Password</label>
-                                                <input type='password' class='form-control' name='pss'>
+                                                <input type='password' class='form-control text-center' name='pss'>
                                         </div>
                                         <div class='form-group'>
                                                 <button type='success' class='btn btn-primary'>Login</button>

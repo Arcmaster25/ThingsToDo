@@ -3,7 +3,7 @@
         class Homework_model{
                 private $connection;
                 function __construct(){
-                        $this->connection = new Connection();
+                        $this->connection = connection();
                 }
                 public function add($name, $list_id){
                         $query = "INSERT INTO homework (homeWorkName, list_id) VALUES ('$name', '$list_id')";
