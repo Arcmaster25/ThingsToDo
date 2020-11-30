@@ -5,7 +5,7 @@
         <link rel='stylesheet' href='public/css/main.css'>
         <title>ThingToDo</title>
 </head>
-<body> 
+<body>
         <?php if($message != ''){ ?>
                 <div class='alert alert-danger text-center m-2'>
                         <?php echo $message; ?>
@@ -15,7 +15,7 @@
                 <div class='card text-center'>
                         <div class='card-header'>
                                 <h2 class='card-title'>Login</h2>
-                        </div> 
+                        </div>
                         <div class='card-body'>
                                 <form action='index.php?controller=user&action=login' method='POST'>
                                         <div class='form-group'>

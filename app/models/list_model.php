@@ -8,7 +8,7 @@
                 public function add($user_id, $name){
                         $query = "INSERT INTO list (list_name, user_id) VALUES ('$name', '$user_id')";
                         $add = $this->connection->query($query);
-                        return $add->affected_rows;
+                        return $this->connection->affected_rows;
                 }
                 public function get_all_by_user_id($user_id){
                         $query = "SELECT * FROM list WHERE user_id = '$user_id'";
@@ -18,12 +18,12 @@
                 public function update($id, $name){
                         $query = "UPDATE list SET list_name = '$name'";
                         $update = $this->connection->query($query);
-                        return $update->affected_rows;
+                        return $this->connection->affected_rows;
                 }
                 public function delete($id){
                         $query = "DELETE FROM list WHERE id = '$id'";
                         $delete = $this->connection->query($query);
-                        return $delete->affected_rows;
+                        return $this->connection->affected_rows;
                 }
                 public function get_all_task($list_id){
                         $query = "SELECT homework.id, homework.homework_name, homework.list_id FROM list RIGHT JOIN homework ON list.id = homework.id";

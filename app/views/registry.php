@@ -5,7 +5,7 @@
         <link rel='stylesheet' href='public/css/main.css'>
         <title>ThingToDo</title>
 </head>
-<body> 
+<body>
         <?php if($message != 'El usuario fue creado de forma satisfactoria'){ ?>
                 <?php if($message == ''){}else{ ?>
                         <div class='alert alert-danger text-center'>
@@ -22,7 +22,7 @@
                 <div class='card text-center'>
                         <div class='card-header'>
                                 <h2 class='card-title'>Registry</h2>
-                        </div> 
+                        </div>
                         <div class='card-body'>
                                 <form action='index.php?controller=user&action=registry' method='POST'>
                                         <div class='form-group'>

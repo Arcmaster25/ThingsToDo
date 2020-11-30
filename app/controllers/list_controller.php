@@ -13,7 +13,7 @@
                                 if($add_list == null){
                                         echo 'Retorno nulo';
                                 }
-                                if($add_list == TRUE){
+                                if($add_list == 1){
                                         header('Location: index.php?controller=list&action=index');
                                 }
                         }
@@ -46,7 +46,7 @@
                                 $new_name = $_POST['up_list'];
                                 $list_model = new List_model();
                                 $update = $list_model->update($user_id, $new_name);
-                                if($update == TRUE){
+                                if($update == 1){
                                         $message = 'Lista actualizada de forma satisfactoria';
                                         header('Location: index.php?controller=list&action=index');
                                 }
@@ -60,10 +60,10 @@
                         $user_id = '';
                         if(isset($_GET['list_id'])){
                                 $user_id = $_SESSION['user_id'];
-                                $new_name = $_POST['list_id'];
-                                $list_id = new List_model();
+                                $list_id = $_GET['list_id'];
+                                $list_model = new List_model();
                                 $delete = $list_model->delete($list_id);
-                                if($delete == TRUE){
+                                if($delete == 1){
                                         $message = 'Lista eliminada de forma satisfactoria';
                                         header('Location: index.php?controller=list&action=index');
                                 }

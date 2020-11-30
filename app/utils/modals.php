@@ -1,8 +1,8 @@
-<!DOCTYPE> 
+<!DOCTYPE>
 <html>
 <head>
 </head>
-<body>        
+<body>
         <div class='modal fade' id='create_list' tabindex='-1'>
                 <div class='modal-dialog modal-dialog-centered'>
                         <div class='modal-content'>

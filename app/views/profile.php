@@ -5,7 +5,7 @@
         <link rel='stylesheet' href='public/css/main.css'>
         <title>ThingToDo</title>
 </head>
-<body> 
+<body>
         <?php require_once('app/utils/header.php'); ?>
         <div class='container'>
                 <div class='row'>
@@ -28,12 +28,12 @@
                                         <?php } ?>
                                 <?php } ?>
                                 <h1 class='text-center mt-3'>Profile</h1>
-                                <main class='card text-center'> 
+                                <main class='card text-center'>
                                         <div class='card-body mt-3'>
                                                 <form method='POST'>
                                                         <div class='form-group'>
                                                                 <label for='user'>User</label>
-                                                                <input type='text' disabled class='text-center form-control' name='user' value="<?php echo $name = $user_name['name'] != '' ? $user_name['name'] : '' ?>">
+                                                                <input type='text' disabled class='text-center form-control' name='user' value="<?php echo $name = $user_name["name"] != '' ? $user_name["name"] : '' ?>">
                                                         </div>
                                                         <div id='user_form'>
                                                                 <div class='form-group'>
