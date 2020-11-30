@@ -16,7 +16,7 @@
                         return $get_all->fetch_all(MYSQLI_ASSOC);
                 }
                 public function update($id, $name){
-                        $query = "UPDATE list SET list_name = '$name'";
+                        $query = "UPDATE list SET list_name = '$name' WHERE id = '$id'";
                         $update = $this->connection->query($query);
                         return $this->connection->affected_rows;
                 }

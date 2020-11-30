@@ -41,11 +41,13 @@
                         session_start();
                         $message = '';
                         $user_id = '';
-                        if(isset($_POST['up_list'])){
+                        $list_id = '';
+                        if(isset($_POST['up_list']) && isset($_POST['list_id'])){
                                 $user_id = $_SESSION['user_id'];
                                 $new_name = $_POST['up_list'];
+                                $list_id = $_POST['list_id'];
                                 $list_model = new List_model();
-                                $update = $list_model->update($user_id, $new_name);
+                                $update = $list_model->update($list_id, $new_name);
                                 if($update == 1){
                                         $message = 'Lista actualizada de forma satisfactoria';
                                         header('Location: index.php?controller=list&action=index');
