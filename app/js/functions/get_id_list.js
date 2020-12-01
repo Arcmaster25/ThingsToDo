@@ -4,7 +4,7 @@ console.log(modal_id);
 $(list).each(function(){
         let button = $(this).find('button.btn');
         $(button).click(function(){
-                let id_value = $(button).attr('value');
+                let id_value = $(this).attr('value');
                 $(modal_id).attr('value', id_value);
         });
 });

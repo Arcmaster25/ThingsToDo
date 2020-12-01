@@ -42,7 +42,7 @@
                                                         <?php foreach($all_list as $list_item){ ?>
                                                                 <li class="list-group-item">
                                                                         <span class='text-monospace'><?php echo $list_item['list_name'] ?></span>
-                                                                        <a href='index.php?controller=list&action=content' class='btn btn-outline-success btn-sm'>show</a>
+                                                                        <button type='button' class='btn btn-outline-success btn-sm contents' value='<?php echo $list_item['id'] ?>'>show</button>
                                                                         <button type='button' class='btn btn-outline-warning btn-sm' data-toggle='modal' data-target='#update_list' value='<?php echo $list_item['id'] ?>'>update</button>
                                                                         <a href="index.php?controller=list&action=delete&list_id=<?php echo $list_item['id'] ?>" class='btn btn-outline-danger btn-sm'>delete</a>
                                                                 </li>
@@ -83,5 +83,6 @@
         <script src='tools/popper/popper.min.js'></script>
         <script src='tools/bootstrap/dist/js/bootstrap.min.js'></script>
         <script src='app/js/functions/get_id_list.js'></script>
+        <script src="app/js/functions/tasks.js"></script>
 </body>
 </html>

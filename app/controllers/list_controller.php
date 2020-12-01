@@ -18,7 +18,7 @@
                                 }
                         }
                         require('app/views/list.php');
-                } 
+                }
                 public function index(){
                         require('app/models/list_model.php');
                         session_start();
@@ -74,8 +74,8 @@
                 }
                 public function content(){
                         require('app/models/list_model.php');
-                        session_start();
-                        $user_id = $_SESSION['user_id'];
+                        //session_start();
+                        //$user_id = $_SESSION['user_id'];
                         $all_task = '';
                         if(isset($_GET['list_id']) && $_GET['list_id'] != ''){
                                 $list_id = $_GET['list_id'];
@@ -85,7 +85,7 @@
                                         $all_task = $content_list;
                                 }
                         }
-                        require('app/views/list.php');
+                        //require('app/views/list.php');
                 }
         }
         if(isset($_GET['action']) && !empty($_GET['action'])){
