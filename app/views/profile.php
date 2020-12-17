@@ -33,29 +33,35 @@
                                                 <form method='POST'>
                                                         <div class='form-group'>
                                                                 <label for='user'>User</label>
-                                                                <input type='text' disabled class='text-center form-control' name='user' value="<?php echo $name = $user_name["name"] != '' ? $user_name["name"] : '' ?>">
+                                                                <input type='text' disabled class='text-center form-control' name='user' value="<?php if($user_id == ''){
+
+                                                                }else{
+                                                                        echo $name = $user_name["name"] != '' ? $user_name["name"] : '';
+                                                                } ?>">
                                                         </div>
                                                         <div id='user_form'>
                                                                 <div class='form-group'>
                                                                         <label for='usr'>New User</label>
-                                                                        <input type='text' class='text-center form-control' name='usr'>
+                                                                        <input type='text' class='text-center form-control' name='usr' required>
                                                                 </div>
                                                                 <div class='form-group'>
                                                                         <button type='submit' class='btn btn-success' formaction='index.php?controller=user&action=update_name'>Confirm Change</button>
                                                                 </div>
                                                         </div>
+                                                </form>
+                                                <form method="POST">
                                                         <div class='form-group'>
                                                                 <label for='pss'><span id='update'>Actual</span> Password</label>
-                                                                <input type='password' disabled class='text-center form-control' name='pss'>
+                                                                <input type='password' disabled class='text-center form-control' name='pss' required>
                                                         </div>
                                                         <div id='password_form'>
                                                                 <div class='form-group'>
                                                                         <label for='pss_new'>New Password</label>
-                                                                        <input type='password' class='text-center form-control' name='pss_new'>
+                                                                        <input type='password' class='text-center form-control' name='pss_new' required>
                                                                 </div>
                                                                 <div class='form-group'>
                                                                         <label for='pss_conf'>Confirm Password</label>
-                                                                        <input type='password' class=' text-center form-control' name='pss_conf'>
+                                                                        <input type='password' class=' text-center form-control' name='pss_conf' required>
                                                                 </div>
                                                                 <div class='form-group'>
                                                                         <button type='submit' class='btn btn-success' formaction='index.php?controller=user&action=update_password'>Confirm Change</button>

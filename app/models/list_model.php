@@ -26,9 +26,9 @@
                         return $this->connection->affected_rows;
                 }
                 public function get_all_task($list_id){
-                        $query = "SELECT homework.id, homework.homework_name, homework.list_id FROM list RIGHT JOIN homework ON list.id = homework.id";
+                        $query = "SELECT homework.id, homework.homework_name, homework.list_id FROM list RIGHT JOIN homework ON list.id = homework.list_id WHERE list.id = '$list_id'";
                         $get_all_task = $this->connection->query($query);
-                        return $get_all_task->fetch_all(MYSQL_ASSOC);
+                        return $get_all_task->fetch_all(MYSQLI_ASSOC);
                 }
         }
 ?>

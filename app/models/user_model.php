@@ -23,12 +23,12 @@
                 public function update_name($id, $name){
                         $query = "UPDATE users SET name = '$name' WHERE id = '$id'";
                         $update_name = $this->connection->query($query);
-                        return $update_name->affected_rows;
+                        return $this->connection->affected_rows;
                 }
                 public function update_password($id, $password){
                         $query = "UPDATE users SET password = '$password' WHERE id = '$id'";
                         $update_password = $this->connection->query($query);
-                        return $update_password->affected_rows;
+                        return $this->connection->affected_rows;
                 }
         }
 ?>

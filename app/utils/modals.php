@@ -38,10 +38,11 @@
                                         </button>
                                 </div>
                                 <div class='modal-body'>
-                                        <form class='text-center' action='index.php?controller=homework&action=add' method='POST'>
+                                        <form class='text-center'>
                                                 <div class='form-group'>
                                                         <label for='ts_name'>Task Name</label>
                                                         <input type='text' class='form-control' name='ts_name'>
+                                                        <input type="hidden" id='id_for_task' value=''>
                                                 </div>
                                                 <button type='submit' class='btn btn-success'>Create</button>
                                         </form>
@@ -81,12 +82,14 @@
                                         </button>
                                 </div>
                                 <div class='modal-body'>
-                                        <form class='text-center' action='index.php?controller=list&action=update' method='POST'>
+                                        <form class='text-center'>
                                                 <div class='form-group'>
                                                         <label for='up_list'>List Name</label>
                                                         <input type='text' class='form-control' name='up_list'>
                                                 </div>
-                                                <button type='submit' class='btn btn-success'>Update</button>
+                                                <input type="hidden" name='homework_id' id='homework_id' value=''>
+                                                <input type="hidden" name='homework_id' id='homework_list_id' value=''>
+                                                <button type='submit' class='btn btn-success' id='update_btn'>Update</button>
                                         </form>
                                 </div>
                         </div>

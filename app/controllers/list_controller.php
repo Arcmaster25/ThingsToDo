@@ -74,8 +74,6 @@
                 }
                 public function content(){
                         require('app/models/list_model.php');
-                        //session_start();
-                        //$user_id = $_SESSION['user_id'];
                         $all_task = '';
                         if(isset($_GET['list_id']) && $_GET['list_id'] != ''){
                                 $list_id = $_GET['list_id'];
@@ -83,9 +81,9 @@
                                 $content_list = $list_model->get_all_task($list_id);
                                 if(is_countable($content_list) > 0){
                                         $all_task = $content_list;
+                                        echo json_encode($all_task, JSON_FORCE_OBJECT);
                                 }
                         }
-                        //require('app/views/list.php');
                 }
         }
         if(isset($_GET['action']) && !empty($_GET['action'])){

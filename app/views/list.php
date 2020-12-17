@@ -1,4 +1,4 @@
-<!DOCTYPE> 
+<!DOCTYPE>
 <html>
 <head>
         <meta charset='UTF-8'>
@@ -41,8 +41,8 @@
                                                 <?php }else{ ?>
                                                         <?php foreach($all_list as $list_item){ ?>
                                                                 <li class="list-group-item">
-                                                                        <span class='text-monospace'><?php echo $list_item['list_name'] ?></span>
-                                                                        <button type='button' class='btn btn-outline-success btn-sm contents' value='<?php echo $list_item['id'] ?>'>show</button>
+                                                                        <span class='text-monospace list_name'><?php echo $list_item['list_name'] ?></span>
+                                                                        <button type='button' class='btn btn-outline-success btn-sm contents' value='<?php echo $list_item['id'] ?>'>select</button>
                                                                         <button type='button' class='btn btn-outline-warning btn-sm' data-toggle='modal' data-target='#update_list' value='<?php echo $list_item['id'] ?>'>update</button>
                                                                         <a href="index.php?controller=list&action=delete&list_id=<?php echo $list_item['id'] ?>" class='btn btn-outline-danger btn-sm'>delete</a>
                                                                 </li>
@@ -53,26 +53,18 @@
                         </aside>
                         <main class='col-8 p-2'>
                                 <h2 class='d-flex flex-row justify-content-around'>
-                                        List:
+                                        List: <span class="text-monospace" id="list_name"></span>
                                         <button type='button' class='btn btn-info rounded-circle border-0' disabled data-toggle='modal' data-target='#create_task'>
                                                 <span class='text-uppercase font-weight-bold'>+</span>
                                         </button>
                                 </h2>
                                 <ul class='list-group'>
                                         <?php if($user_id == ''){ ?>
-                                                <p class='text-monospace'>Debes loguearte para ver tus tareas</p>
+                                                
                                         <?php }else{ ?>
                                                 <?php if($all_task == ''){ ?>
-                                                        <p class='text-monospace'>No has creado ninguna tarea</p>
-                                                <?php }else{ ?>
-                                                        <?php foreach($all_task as $task){ ?>
-                                                                <li class='list_group_item'>
-                                                                        <span class='text-monospace'><?php echo $task['homework_name'] ?></span>
-                                                                        <button type='button' class='btn btn-outline-warning' data-toggle='modal' data-target='#update_task'>update</button>
-                                                                        <button type='button' class='btn btn-outline-delete'>delete</button>
-                                                                </li>
-                                                        <?php } ?>
-                                                <?php } ?>
+                                                        <p class='text-monospace'>Selecciona una lista</p>
+                                                <?php }?>
                                         <?php } ?>
                                 </ul>
                         </main>

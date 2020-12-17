@@ -6,12 +6,12 @@
                         $this->connection = connection();
                 }
                 public function add($name, $list_id){
-                        $query = "INSERT INTO homework (homeWorkName, list_id) VALUES ('$name', '$list_id')";
+                        $query = "INSERT INTO homework (homeWork_name, list_id) VALUES ('$name', '$list_id')";
                         $add = $this->connection->query($query);
                         return $this->connection->affected_rows;
                 }
                 public function update($id, $name){
-                        $query = "UPDATE homework SET homeWorkName = '$name' WHERE id = '$id'";
+                        $query = "UPDATE homework SET homeWork_name = '$name' WHERE id = '$id'";
                         $update = $this->connection->query($query);
                         return $this->connection->affected_rows;
                 }
